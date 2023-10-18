@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Kentucky Results Map";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div id="map" style="height: 800px;"></div>
+
+@section Scripts {
+    <script>
+        function initMap() {
+            var kentucky = { lat: 37.8393, lng: -84.2700 }; // Set variable for Kentucky
+            var map = new google.maps.Map(document.getElementById('map'), { // Create map
+                zoom: 7,
+                center: kentucky // center on coordinates
+            });
+            var marker = new google.maps.Marker({
+                position: kentucky,
+                map: map,
+                title: 'Kentucky'
+            });
+        }
+    </script>
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
