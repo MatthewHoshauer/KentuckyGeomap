@@ -9,15 +9,37 @@
 @section Scripts {
     <script>
         function initMap() {
+            
             var kentucky = { lat: 37.8393, lng: -84.2700 }; // Set variable for Kentucky
+            var bg = { lat: 36.9685, lng: -86.4808 }; // BG Battlefield
+            var ww = { lat: 38.2187, lng: -85.7592 }; // Wanted Wednesday
+            var dgt = { lat: 38.0415, lng: -84.5041 }; // Don't Get Tilted
+
+         //   var image = "https://raw.githubusercontent.com/MatthewHoshauer/KentuckyGeomap/master/WKUsmash_transparent.png?token=GHSAT0AAAAAACJCW2REU6436ECREETNACZOZJQN75A" // Link to BG Smash icon
+
+
             var map = new google.maps.Map(document.getElementById('map'), { // Create map
                 zoom: 7,
                 center: kentucky // center on coordinates
             });
-            var marker = new google.maps.Marker({
-                position: kentucky,
+         //   var KYmarker = new google.maps.Marker({
+         //       position: kentucky,
+         //       map: map,
+         //       title: 'Kentucky'
+         //   });
+            var BGmarker = new google.maps.Marker({
+                position: bg,
                 map: map,
-                title: 'Kentucky'
+                title: 'Bowling Green',
+                // icon: image
+            });
+            var WWmarker = new google.maps.Marker({
+                position: ww,
+                map: map
+            });
+            var DGTmarker = new google.maps.Marker({
+                position: dgt,
+                map: map
             });
         }
     </script>
